@@ -21,7 +21,7 @@ class BinNode:
           self.index = int(val[1]) # index
           value = val[0]
       self.type = OpType.ATTR
-      self.attribute = value.upper()      
+      self.attribute = value      
       
     elif(value >= OpType.OR and value < OpType.NONE):
       self.type = value
