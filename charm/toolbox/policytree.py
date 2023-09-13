@@ -54,7 +54,7 @@ class PolicyParser:
         # describes an individual leaf node
         leafNode =  (Optional("!") + Word(alphanums+'-_./\?!@#$^&*%')).setParseAction( createAttribute )
         # describes expressions such as (attr < value)
-        leafConditional = (Word(alphanums) + BinOperator + Word(nums)).setParseAction( parseNumConditional )
+        leafConditional = Combine(Word(alphanums) + BinOperator + Word(nums)).setParseAction( parseNumConditional )
 
         # describes the node concept
         node = leafConditional | leafNode 
